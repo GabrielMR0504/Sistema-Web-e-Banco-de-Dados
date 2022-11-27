@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teste de sistema de busca de alunos</title>
+    <title>Loja Informatica</title>
 </head>
 <body>
     
