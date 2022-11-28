@@ -359,7 +359,7 @@
 
 
         <footer>
-            <p class="footer">Copyright 2020 - Disciplina de Desenvolvimento de Interfaces Web - PUC Minas</p>
+            <p class="footer">Copyright © 2022 - Banco de Dados - Jorge Hiroki - Rafael Lima - Gabriela Guerra - Gabriel de Medeiros</p>
             <img src="logo-portal.png">
         </footer>
 
