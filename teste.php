@@ -3,6 +3,10 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
+<?php
+	include ('conexao.php');
+?>
+
 <!DOCTYPE html>
 <html>
     
@@ -11,7 +15,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="styleLogin.css" media="screen" />
 </head>
 <!--Coded with love by Mutiullah Samim-->
 <body>
@@ -37,26 +41,13 @@
 							</div>
 							<input type="password" name="senha" class="form-control input_pass" value="" placeholder="password">
 						</div>
-						<div class="form-group">
-							<div class="custom-control custom-checkbox">
-								<input type="checkbox" class="custom-control-input" id="customControlInline">
-								<label class="custom-control-label" for="customControlInline">Remember me</label>
-							</div>
-						</div>
 							<div class="d-flex justify-content-center mt-3 login_container">
-							<a href="index.php" target="_self"><button type="button" name="button" class="btn login_btn">Login </button></a>
-		
+							<button type="button" name="login" class="btn login_btn">Login</button>
+							
+							<!--/<a href="/TrabBd/Sistema-web-e-banco-de-dados/loja/index.php" target="_self"></a>-->
+							
 				   </div>
 					</form>
-				</div>
-		
-				<div class="mt-4">
-					<div class="d-flex justify-content-center links">
-						Don't have an account? <a href="#" class="ml-2">Sign Up</a>
-					</div>
-					<div class="d-flex justify-content-center links">
-						<a href="#">Forgot your password?</a>
-					</div>
 				</div>
 			</div>
 		</div>
