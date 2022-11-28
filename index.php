@@ -75,11 +75,14 @@
                             <div class="d-flex justify-content-center mt-3 login_container">
                             <button type="submit" name="login" class="btn login_btn">Login</button>
 
-                            <!--/<a href="/TrabBd/Sistema-web-e-banco-de-dados/loja/index.php" target="_self"></a>-->
-
                    </div>
                     </form>
 
+				</div>
+				<div class="mt-4">
+					<div class="d-flex justify-content-center links" >
+						<p class="signUp" >Don't have an account?</p><a href="#" class="ml-2">Sign Up</a>
+					</div>
 				</div>
 			</div>
 		</div>
