@@ -1,0 +1,160 @@
+html{
+    width: 100%;
+}
+body{
+    font: Trebuchet MS, sans-serif;
+}
+
+
+.MostrarMais{
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+
+
+.lancamentos{
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+    font-family: fantasy;
+}
+.lancamentos h5{
+    color: #F2F2F2;
+    font-family: Verdana, sans-serif;
+    padding: 20px;
+}
+#lancamentos{
+    color: #F2F2F2;
+    background-color: #262626;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+#textocarrossel{
+    font-size: 1rem;
+}
+#textocarrossel p{
+    font-family: Comic Sans MS, Comic Sans, cursive;
+}
+iframe{
+    padding: 20px;
+    max-width: 100%;
+}
+
+#destaque{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+#imgsdestaque img{
+    max-width: 100%;
+    padding: 10px;
+}
+.avaliacoes{
+    padding: 20px;
+    margin-top: 20px;
+}
+
+
+.usuario{
+    margin: 20px;
+}
+h5{
+    display: inline;
+}
+.checked {
+    color: orange;
+    margin-bottom: 20px;
+  }
+
+
+.entrevistas{
+    background-color: #0D0D0D;
+    color:#F2F2F2;
+    margin-bottom: 20px;
+    padding: 20px;
+    font-size: 1rem;
+}
+.entrevistas h3{
+    margin: 30px auto;
+    font-family: Verdana, sans-serif;
+    margin-bottom: 50px;
+    font-size: 2.0rem;
+    text-align: center;
+}
+.entrevistas p,h4{
+    margin: 10px 20px;
+    font-weight: 100;
+}
+.entrevistas p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+}
+
+footer{
+    width: 100%;
+    background-color:#262626;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+.footer{
+    text-align: center;
+    margin: 20px auto;
+}
+footer img{
+    max-width: 70px;
+}
+
+
+#inferior{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: (1fr 1fr 1fr);
+}
+#inferior .card{
+    max-width: 100%;
+}
+#inferior h3{
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+#menuIcon{
+    display: none;
+}
+.menu-icon{
+    display: none;
+}
+
+
+@media screen and (max-width:800px){
+    footer img{
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width:1000px){
+    #botaopesquisa{
+        display: none;
+    }
+}
+@media screen and (max-width:425px){
+    .form-inline{
+        width: 50%;
+    }
+}
+@media screen and (max-width:340px){
+    .form-inline{
+        display: none;
+    }
+    html{
+        font-size: 0.8rem;
+    }
+}
