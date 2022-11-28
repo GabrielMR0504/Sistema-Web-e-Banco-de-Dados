@@ -81,7 +81,7 @@
 				</div>
 				<div class="mt-4">
 					<div class="d-flex justify-content-center links" >
-						<p class="signUp" >Don't have an account?</p><a href="#" class="ml-2">Sign Up</a>
+						<p class="signUp" >Não tem uma conta?</p><a href="#" class="ml-2">Registrar</a>
 					</div>
 				</div>
 			</div>
