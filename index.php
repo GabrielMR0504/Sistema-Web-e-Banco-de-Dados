@@ -64,7 +64,7 @@
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
-                            <input type="text" name="email" class="form-control input_user" value="" placeholder="username">
+                            <input type="text" name="email" class="form-control input_user" value="" placeholder="Email">
                         </div>
                         <div class="input-group mb-2">
                             <div class="input-group-append">
@@ -81,7 +81,7 @@
 				</div>
 				<div class="mt-4">
 					<div class="d-flex justify-content-center links" >
-						<p class="signUp" >Não tem uma conta?</p><a href="#" class="ml-2">Registrar</a>
+						<p class="signUp" >Não tem uma conta?</p><a href="registrar.php" class="ml-2">Registrar</a>
 					</div>
 				</div>
 			</div>
