@@ -1,6 +1,7 @@
 
 <?php
 	include ('protect.php');
+    include ('conexao.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -265,54 +266,59 @@
             </div>
         </div>
     </div>
+    <!-- ITENS -->
+    <?php
+     $sql_code = "SELECT * FROM produto";
+     $sql_query = $mysqli-> query($sql_code) or die("Erro ao consultar catálogo de produtos! " . $mysqli->error);
+     $qnt = $sql_query->num_rows;
+    ?>
     <div class="container" id="inferior">
         <div class="row">
             <div class="col-lg-6 col-12">
-                <h3>Novidades</h3>
+                <h3>Produtos</h3>
+                <!-- FAZER UM IF COM ALGO COMO NADA CADSTRADO SE NAO TIVER ITENS-->
+                <?php
+                if($qnt < 1){
+                    ?>
                 <div class="card mb-3" style="max-width: 540px;">
                     <div class="row no-gutters">
-                        <div class="col-md-4">
-                            <img src="frozen2.jpg" class="card-img" alt="...">
-                        </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <h5 class="card-title">Frozen 2</h5>
-                                <p class="card-text">De volta à infância de Elsa e Anna, as duas garotas descobrem uma história do pai, quando ainda era príncipe de Arendelle. Ele conta às meninas a história de uma visita à floresta dos elementos, onde um acontecimento inesperado teria provocado a separação dos habitantes da cidade com os quatro elementos fundamentais: ar, fogo, terra e água. Esta revelação ajuda Elsa a compreender a origem de seus poderes.</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                <h5 class="card-title">Não há produtos cadastrados</h5>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="card mb-3" style="max-width: 540px;">
-                    <div class="row no-gutters">
-                        <div class="col-md-4">
-                            <img src="coringa.jpg" class="card-img" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">Coringa</h5>
-                                <p class="card-text">Isolado, intimidado e desconsiderado pela sociedade, o fracassado comediante Arthur Fleck inicia seu caminho como uma mente criminosa após assassinar três homens em pleno metrô. Sua ação inicia um movimento popular contra a elite de Gotham City, da qual Thomas Wayne é seu maior representante.</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                
+                <!-- else aqui-->
+                <?php
+                }else{
+                    while($dados = $sql_query ->fetch_assoc()){
+                        ?>
+                        <div class="card mb-3" style="max-width: 540px;">
+                            <div class="row no-gutters">
+                                <div class="col-md-4">
+                                    <img src="Imagens/<?php echo $dados['Imagem'];?>" class="card-img" alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><?php echo $dados['Nome'];?></h5>
+                                        <p class="card-text"><small class="text-muted"><?php echo $dados['QntdVendas'];?> vendidos</small></p>
+                                        <p class="card-text"><?php echo $dados['Descricao'];?></p>
+                                        <p class="card-text">Marca: <?php echo $dados['Marca'];?></p>
+                                        <p class="card-text">Tipo: <?php echo $dados['Tipo'];?></p>
+                                        <p class="card-text">R$<?php echo $dados['Preco'];?></p>
+                                        <p class="card-text"><small class="text-muted"><?php echo $dados['Estoque'];?> disponíveis</small></p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="card mb-3" style="max-width: 540px;">
-                    <div class="row no-gutters">
-                        <div class="col-md-4">
-                            <img src="toystory4.jpg" class="card-img" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">Toy Story 4</h5>
-                                <p class="card-text">Woody, Buzz Lightyear e o resto da turma embarcam em uma viagem com Bonnie e um novo brinquedo chamado Forky. A aventura logo se transforma em uma reunião inesperada quando o ligeiro desvio que Woody faz o leva ao seu amigo há muito perdido, Bo Peep.</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                        <?php
+                    }
+                }
+                ?>
             </div>
-            <div class="col-lg-6 col-12">
+            <!-- <div class="col-lg-6 col-12">
                 <div class="sobre">
                     <h3>Sobre</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas perferendis rerum nesciunt, a aut
@@ -329,8 +335,8 @@
                         assumenda
                         eveniet voluptas illo vitae rem unde necessitatibus consequuntur repellat iste repudiandae
                         reprehenderit, vel culpa repellendus at nesciunt!</p>
-                </div>
-            </div>
+                </div> 
+            </div>-->
         </div>
     </div>
         <footer>
