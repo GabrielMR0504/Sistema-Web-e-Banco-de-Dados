@@ -29,19 +29,13 @@
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="#carrossel">Lançamentos</a>
+              <a class="nav-link" href="#carrossel">Promocões</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#destaque">Destaque</a>
+              <a class="nav-link" href="#inferior">Produtos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#avaliacao">Avaliações</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#entrevistas">Entrevistas</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#inferior">Novidades</a>
+              <a class="nav-link" href="#Autores">Autores</a>
             </li>
           </ul>
         </div>
@@ -141,131 +135,9 @@
             </div>
         </div>
     </div>
-    <div class="destaque" id="destaque">
-        <div class="container">
-            <div class="row" id="destaque">
-                <h3>Em Destaque</h3>
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Categorias
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Aventura</a>
-                        <a class="dropdown-item" href="#">Romance</a>
-                        <a class="dropdown-item" href="#">Comédia</a>
-                    </div>
-                </div>
-            </div>
-            <div class="row" id="imgsdestaque">
-                <div class="col-12 col-lg-3 col-sm-6">
-                    <a href="#"><img src="coringa.jpg"></a>
-                </div>
-                <div class="col-12 col-lg-3 col-sm-6">
-                    <a href="#"><img src="cincopassos.jpg"></a>
-                </div>
-                <div class="col-12 col-lg-3 col-sm-6">
-                    <a href="#"><img src="ultimato.jpg"></a>
-                </div>
-                <div class="col-12 col-lg-3 col-sm-6">
-                    <a href="#"><img src="toystory4.jpg"></a>
-                </div>
-                <div class="col-12 MostrarMais"> 
-                        <button class="btn btn-dark" type="submit" id="mostrar">Mostrar mais</button>
-                </div>
-                <div class="row">
-                    <div class="avaliacoes" id="avaliacao">
-                        <div class="col-12">
-                            <h3>Avaliações</h3>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6 col-md-4 col-12">
-                            <i class="fas fa-user-circle"></i>
-                            <h5> Nome do usuário</h5>
-                            <p class="usuario"><b>Avaliação:</b> Lorem ipsum dolor sit amet consectetur adipisicing
-                                elit. Porro numquam alias vitae, at accusamus quo! Nihil ullam sunt, tenetur similique
-                                saepe facilis quas, temporibus est fuga nemo accusantium cupiditate possimus!</p>
-                                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star"></span>
-<span class="fa fa-star"></span>
-                        </div>
-                        <div class="col-sm-6 col-md-4 col-12">
-                            <i class="fas fa-user-circle"></i>
-                            <h5> Nome do usuário</h5>
-                            <p class="usuario"><b>Avaliação:</b> Lorem ipsum dolor sit amet consectetur adipisicing
-                                elit. Porro numquam alias vitae, at accusamus quo! Nihil ullam sunt, tenetur similique
-                                saepe facilis quas, temporibus est fuga nemo accusantium cupiditate possimus!</p>
-                                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star"></span>
-<span class="fa fa-star"></span>
-                        </div>
-                        <div class="col-sm-6 col-md-4 col-12">
-                            <i class="fas fa-user-circle"></i>
-                            <h5> Nome do usuário</h5>
-                            <p class="usuario"><b>Avaliação:</b> Lorem ipsum dolor sit amet consectetur adipisicing
-                                elit. Porro numquam alias vitae, at accusamus quo! Nihil ullam sunt, tenetur similique
-                                saepe facilis quas, temporibus est fuga nemo accusantium cupiditate possimus!</p>
-                                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star"></span>
-<span class="fa fa-star"></span>
-                        </div>
-                    </div>
-                    <div class="col-12 MostrarMais"> 
-                        <button class="btn btn-dark" type="submit" id="mostrar">Mostrar mais</button>
-                </div>
-                </div>
-            </div>
-        </div>
+    
     </div>
-    <div class="entrevistas" id="entrevistas">
-        <div class="container">
-            <div class="row">
-                <h3>Entrevistas e Making-of</h3>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-12">
-                    <iframe width="100%" src="https://www.youtube.com/embed/0HEvyxNJRks"
-                        allow="accelerometer;autoplay;encrypted-media;gyroscope;picture-in-picture" frameborder="0"
-                        allowfullscreen>
-                    </iframe>
-                    <h4>Aquaman</h4>
-                    <p>Diretor : James Wan</p>
-                    <p>Data : 13 de dezembro de 2018</p>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <iframe width="100%" src="https://www.youtube.com/embed/BC1dUtTVa6Q"
-                        allow="accelerometer;autoplay;encrypted-media;gyroscope;picture-in-picture" frameborder="0"
-                        allowfullscreen>
-                    </iframe>
-                    <h4>Senhor dos Anéis</h4>
-                    <p>Diretor : Peter Jackson</p>
-                    <p>Data : 1 de janeiro de 2002</p>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <iframe width="100%" src="https://www.youtube.com/embed/R0CQyRq_X9U"
-                        allow="accelerometer;autoplay;encrypted-media;gyroscope;picture-in-picture" frameborder="0"
-                        allowfullscreen>
-                    </iframe>
-                    <h4>Resgate</h4>
-                    <p>Diretor : Sam Hargrave</p>
-                    <p>Data : 24 de abril de 2020</p>
-                </div>
-                <div class="col-12 MostrarMais"> 
-                    <button class="btn btn-dark" type="submit" id="mostrar">Mostrar mais</button>
-            </div>
-            </div>
-        </div>
-    </div>
+    
     <!-- ITENS -->
     <?php
      $sql_code = "SELECT * FROM produto";
@@ -339,7 +211,7 @@
             </div>-->
         </div>
     </div>
-        <footer>
+        <footer id="Autores">
             <p class="footer">Copyright © 2022 - Banco de Dados - Jorge Hiroki - Rafael Lima - Gabriela Guerra - Gabriel de Medeiros</p>
             <img src="logo-portal.png">
         </footer>
