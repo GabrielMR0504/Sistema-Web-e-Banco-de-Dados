@@ -44,7 +44,18 @@ html {
 }
 .login_btn {
     width: 100%;
-    background: #262626 !important;
+    background: #2b2a2a !important;
+    color: white !important;
+}
+.pay_container{
+    
+    margin-left: 1000px;
+    width: 130px;
+    padding: 5 2rem;
+}
+.pay_btn{
+    width: 100%;
+    background: #ec600f !important;
     color: white !important;
 }
 .login_btn:focus {

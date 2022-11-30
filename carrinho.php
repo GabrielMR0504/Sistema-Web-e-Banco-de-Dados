@@ -61,8 +61,8 @@ include('conexao.php');
         <div class="row">
             <div class="col-lg-12 col-12" >
                 <h3>Produtos</h3>
-                <div class="d-flex justify-content-center mt-3 login_container" style="margin-left: 1005px">
-                    <button type="submit" name="registrar" class="btn login_btn">Pagar</button>
+                <div class="d-flex justify-content-center mt-3 pay_container" style="margin-left: 1005px">
+                    <button type="submit" name="registrar" class="btn pay_btn">Pagar</button>
                 </div>
                 <!-- FAZER UM IF COM ALGO COMO NADA CADSTRADO SE NAO TIVER ITENS-->
                 <?php
