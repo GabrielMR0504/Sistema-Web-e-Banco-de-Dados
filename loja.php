@@ -39,178 +39,201 @@
             </li>
           </ul>
         </div>
-        <form class="form-inline" action="/action_page.php">
-            <input class="form-control mr-sm-2" type="text" placeholder="Pesquisar">
-            <button class="btn btn-light" type="submit" id="botaopesquisa">Pesquisar</button>
+        <form action="">
+            <input name="busca" placeholder="Pesquisar" type="text">
+            <button class="btn btn-light" type="submit">Pesquisar</button>
           </form>
           <!-- Toggler/collapsibe Button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
           </button>
       </nav>
-    <div class="lancamentos">
-        <div class="container" id="lancamentos">
-            <div class="row">
-                <div class="col-12">
-                    <h1>Lançamentos</h1>
-                </div>
-                <div class="col-12">
-                    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-                            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-                            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-                        </ol>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active" id="carrossel">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-xl-7 col-12">
-                                            <iframe width="560" height="315"
-                                                src="https://www.youtube.com/embed/tdwLRHGQVG8"
-                                                allow="accelerometer;autoplay;encrypted-media;gyroscope;picture-in-picture"
-                                                frameborder="0" allowfullscreen>
-                                            </iframe>
-                                        </div>
-                                        <div class="col-xl-5 col-12" id="textocarrossel">
-                                            <h3>Por lugares incríveis</h3>
-                                            <p><b>Sinopse:</b>O enredo de Por Lugares Incríveis acompanha Violet Markey (Elle Fanning) e Theodore Finch (Justice Smith), que têm suas vidas transformadas para sempre quando se conhecem. Juntos, eles se apoiam para curar os estigmas emocionais e físicos que adquiriram no passado.</p>
-                                            <p><b>Diretor: </b>Brett Haley    | <b>Ano: </b>2020</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item" id="carrossel">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-xl-7 col-12">
-                                            <iframe width="560" height="315"
-                                                src="https://www.youtube.com/embed/yeegSMOA0fk"
-                                                allow="accelerometer;autoplay;encrypted-media;gyroscope;picture-in-picture"
-                                                frameborder="0" allowfullscreen>
-                                            </iframe>
-                                        </div>
-                                        <div class="col-xl-5 col-12" id="textocarrossel">
-                                            <h3>Scooby! O filme</h3>
-                                            <p><b>Sinopse:</b>Scooby e sua turma encaram o seu maior e mais difícil mistério de todos os tempos: um plano maligno para liberar o cão fantasma, Cérbero, no mundo. Enquanto corre para impedir esse "apocãolipse" global, a turma descobre que Scooby tem um legado secreto e um destino épico maior do que qualquer um podia imaginar.</p>
-                                            <p><b>Diretor: </b>Tony Cervone    | <b>Ano: </b>2020</p>
-                                            <p></p>
+    <?php
+    if(!isset($_GET['busca'])){
+        ?>
+      
+        <div class="lancamentos">
+            <div class="container" id="lancamentos">
+                <div class="row">
+                    <div class="col-12">
+                        <h1>Promoções</h1>
+                        <br/>
+                    </div>
+                    <div class="col-12">
+                        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                                <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                                <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active" id="carrossel">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-4">                            
+                                                    <img src="Imagens/cadeira.jpg" height="260">      
+                                            </div>
+                                            <div class="col-xl-5 col-12" id="textocarrossel">
+                                                <h3>Cadeira Gamer</h3>
+                                                <p><b>Cadeira Gamer DT3sports Elise, Até 130Kg, Reclinável, Preto</b></p>
+                                                <p><b>Marca: </b>DT3sports    | <b>Preço: </b>R$ 800.00</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="carousel-item" id="carrossel">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-xl-7 col-12">
-                                            <iframe width="560" height="315"
-                                                src="https://www.youtube.com/embed/EnAJ99Q77DY"
-                                                allow="accelerometer;autoplay;encrypted-media;gyroscope;picture-in-picture"
-                                                frameborder="0" allowfullscreen>
-                                            </iframe>
-                                        </div>
-                                        <div class="col-xl-5 col-12" id="textocarrossel">
-                                            <h3>O Grito</h3>
-                                            <p><b>Sinopse:</b>Depois que uma jovem mãe mata a família em sua própria casa, uma mãe solteira e um detetive tentam investigar e resolver o caso. Mais tarde, eles descobrem que a casa é amaldiçoada.</p>
-                                            <p><b>Diretor: </b>Nicolas Pesce    | <b>Ano: </b>2020</p>
+                                <div class="carousel-item" id="carrossel">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-4">                            
+                                                <img src="Imagens/PC.jpg" height="260">      
+                                            </div>
+                                            <div class="col-xl-5 col-12" id="textocarrossel">
+                                                <h3>PC Gamer</h3>
+                                                <p><b>PC Gamer Acer Predator Orion PO5-620-BR12, Intel Core i5-11400, LED, NVIDIA GeForce RTX 3060, 16GB DDR4, SSD 512GB, Windows 11 Home, Preto </b></p>
+                                                <p><b>Marca: </b>Acer    | <b>Preço: </b>R$ 5000.00</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="carousel-item" id="carrossel">
+                                    <div class="container">
+                                        <div class="row">
+                                        <div class="col-md-4">                            
+                                                <img src="Imagens/processador.jpg" height="260">      
+                                            </div>
+                                            <div class="col-xl-5 col-12" id="textocarrossel">
+                                                <h3>Ryzen 5 5600</h3>
+                                                <p><b>Processador AMD Ryzen 5 5600, 3.5GHz (4.4GHz Max Turbo), Cache 35MB, AM4</b></p>
+                                                <p><b>Marca: </b>AMD    | <b>Preço: </b>R$ 700.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
                             </div>
-                            
-                            
+                            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button"
+                                data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button"
+                                data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
                         </div>
-                        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button"
-                            data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button"
-                            data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    
-    </div>
-    
-    <!-- ITENS -->
-    <?php
-     $sql_code = "SELECT * FROM produto";
-     $sql_query = $mysqli-> query($sql_code) or die("Erro ao consultar catálogo de produtos! " . $mysqli->error);
-     $qnt = $sql_query->num_rows;
-    ?>
-    <div class="container" id="inferior">
-        <div class="row">
-            <div class="col-lg-6 col-12">
-                <h3>Produtos</h3>
-                <!-- FAZER UM IF COM ALGO COMO NADA CADSTRADO SE NAO TIVER ITENS-->
-                <?php
-                if($qnt < 1){
-                    ?>
-                <div class="card mb-3" style="max-width: 540px;">
-                    <div class="row no-gutters">
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">Não há produtos cadastrados</h5>
+        
+        </div>
+        
+        <!-- ITENS -->
+        <?php
+        $sql_code = "SELECT * FROM produto";
+        $sql_query = $mysqli-> query($sql_code) or die("Erro ao consultar catálogo de produtos! " . $mysqli->error);
+        $qnt = $sql_query->num_rows;
+        ?>
+        <div class="container" id="inferior">
+            <div class="row">
+                <div class="col-lg-6 col-12">
+                    <h3>Produtos</h3>
+                    <!-- FAZER UM IF COM ALGO COMO NADA CADSTRADO SE NAO TIVER ITENS-->
+                    <?php
+                    if($qnt < 1){
+                        ?>
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row no-gutters">
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Não há produtos cadastrados</h5>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    
+                    <!-- else aqui-->
+                    <?php
+                    }else{
+                        while($dados = $sql_query ->fetch_assoc()){
+                            ?>
+                            <div class="card mb-3" style="max-width: 700px;">
+                                <div class="row no-gutters">
+                                    <div class="col-md-4">
+                                        <br/><br/>
+                                        <img src="Imagens/<?php echo $dados['Imagem'];?>" class="card-img" alt="...">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><?php echo $dados['Nome'];?></h5>
+                                            <p class="card-text"><small class="text-muted"><?php echo $dados['QntdVendas'];?> vendidos</small></p>
+                                            <p class="card-text"><?php echo $dados['Descricao'];?></p>
+                                            <p class="card-text">Marca: <?php echo $dados['Marca'];?></p>
+                                            <p class="card-text">Tipo: <?php echo $dados['Tipo'];?></p>
+                                            <p class="card-text">R$<?php echo $dados['Preco'];?></p>
+                                            <p class="card-text"><small class="text-muted"><?php echo $dados['Estoque'];?> disponíveis</small></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php
+                        }
+                    }
+                    ?>
                 </div>
                 
-                <!-- else aqui-->
-                <?php
-                }else{
-                    while($dados = $sql_query ->fetch_assoc()){
-                        ?>
-                        <div class="card mb-3" style="max-width: 540px;">
-                            <div class="row no-gutters">
-                                <div class="col-md-4">
-                                    <img src="Imagens/<?php echo $dados['Imagem'];?>" class="card-img" alt="...">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title"><?php echo $dados['Nome'];?></h5>
-                                        <p class="card-text"><small class="text-muted"><?php echo $dados['QntdVendas'];?> vendidos</small></p>
-                                        <p class="card-text"><?php echo $dados['Descricao'];?></p>
-                                        <p class="card-text">Marca: <?php echo $dados['Marca'];?></p>
-                                        <p class="card-text">Tipo: <?php echo $dados['Tipo'];?></p>
-                                        <p class="card-text">R$<?php echo $dados['Preco'];?></p>
-                                        <p class="card-text"><small class="text-muted"><?php echo $dados['Estoque'];?> disponíveis</small></p>
-                                    </div>
-                                </div>
+            </div>
+        </div>
+        <?php
+    }
+    else{
+        $pesquisa = $mysqli->real_escape_string($_GET['busca']);
+        $sql_pesquisa = "SELECT * FROM PRODUTO WHERE Nome like '%$pesquisa%' or Descricao like '%$pesquisa%' or Tipo like '%$pesquisa%' or Marca like '%$pesquisa%'";
+        $sql_query_pesquisa = $mysqli->query($sql_pesquisa) or die("ERRO AO CONSULTAR" . $mysqli->error);
+        if($sql_query_pesquisa->num_rows==0){
+            ?>
+           
+            <br/>
+            <br/>
+            <td colspan="3">      Nenhum resultado encontrado...</td>
+            <div class="vazio"></div>
+            <br/>
+            <br/>
+            <?php
+        }
+        else{
+            while($dados = $sql_query_pesquisa ->fetch_assoc()){
+                ?>
+                <br/>
+                <div class="card mb-3" style="max-width: 700px;">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <br/><br/>
+                            <img src="Imagens/<?php echo $dados['Imagem'];?>" class="card-img" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo $dados['Nome'];?></h5>
+                                <p class="card-text"><small class="text-muted"><?php echo $dados['QntdVendas'];?> vendidos</small></p>
+                                <p class="card-text"><?php echo $dados['Descricao'];?></p>
+                                <p class="card-text">Marca: <?php echo $dados['Marca'];?></p>
+                                <p class="card-text">Tipo: <?php echo $dados['Tipo'];?></p>
+                                <p class="card-text">R$<?php echo $dados['Preco'];?></p>
+                                <p class="card-text"><small class="text-muted"><?php echo $dados['Estoque'];?> disponíveis</small></p>
                             </div>
                         </div>
-                        <?php
-                    }
-                }
-                ?>
-            </div>
-            <!-- <div class="col-lg-6 col-12">
-                <div class="sobre">
-                    <h3>Sobre</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas perferendis rerum nesciunt, a aut
-                        esse
-                        quod labore doloribus aliquam, incidunt adipisci architecto, totam similique eum excepturi
-                        maxime
-                        saepe culpa est? Tempore fugiat excepturi, aut quibusdam deserunt nulla, nemo natus doloribus
-                        iusto
-                        tempora temporibus quae unde quasi itaque minus! Laudantium, iusto?</p>
+                    </div>
                 </div>
-                <div class="editorial">
-                    <h3>Editorial</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, voluptatem sunt modi
-                        assumenda
-                        eveniet voluptas illo vitae rem unde necessitatibus consequuntur repellat iste repudiandae
-                        reprehenderit, vel culpa repellendus at nesciunt!</p>
-                </div> 
-            </div>-->
-        </div>
-    </div>
+                <?php
+            }
+        ?>
+
+        <?php
+        }
+    }
+        ?>
         <footer id="Autores">
             <p class="footer">Copyright © 2022 - Banco de Dados - Jorge Hiroki - Rafael Lima - Gabriela Guerra - Gabriel de Medeiros</p>
             <img src="logo-portal.png">
@@ -224,5 +247,6 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
             integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
             crossorigin="anonymous"></script>
+        
 </body>
 </html>

@@ -1,19 +1,21 @@
 html{
     width: 100%;
+    background-color: #262626 !important;
 }
 body{
     font: Trebuchet MS, sans-serif;
+    background-color: #262626 !important;
 }
 
-
-.MostrarMais{
-    margin-top: 20px;
-    text-align: center;
+.vazio {
+    min-height: 100%;
+    /* igual a altura do rodapé */
+    margin-bottom: -60px; 
 }
-
-
-
-
+.vazio:after {
+    content: "";
+    display: block;
+}
 .lancamentos{
     align-items: center;
     text-align: center;
@@ -94,7 +96,7 @@ h5{
     font-weight: 100;
 }
 
-footer{
+footer .page-wrap:after{
     width: 100%;
     background-color:#262626;
     display: flex;
@@ -104,9 +106,11 @@ footer{
     color: white;
     padding: 20px;
 }
-.footer{
+
+.footer .page-wrap:after{
     text-align: center;
     margin: 20px auto;
+    
 }
 footer img{
     max-width: 70px;
