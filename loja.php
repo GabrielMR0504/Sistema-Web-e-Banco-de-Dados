@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
         integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
     <link rel="stylesheet" href="portal.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
 </head>
 <body>
     <nav class="navbar navbar-expand-md bg-dark navbar-dark">
@@ -140,7 +141,6 @@
             <div class="row">
                 <div class="col-lg-6 col-12">
                     <h3>Produtos</h3>
-                    <!-- FAZER UM IF COM ALGO COMO NADA CADSTRADO SE NAO TIVER ITENS-->
                     <?php
                     if($qnt < 1){
                         ?>
@@ -152,9 +152,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <!-- else aqui-->
+                    </div>               
                     <?php
                     }else{
                         while($dados = $sql_query ->fetch_assoc()){
@@ -174,6 +172,16 @@
                                             <p class="card-text">Tipo: <?php echo $dados['Tipo'];?></p>
                                             <p class="card-text">R$<?php echo $dados['Preco'];?></p>
                                             <p class="card-text"><small class="text-muted"><?php echo $dados['Estoque'];?> disponíveis</small></p>
+                                            <form action="" method="post">
+                                                <button name=<?php echo $dados['ID'];?> class="carrinhoBtn" type="submit"><i class="fa-sharp fa-solid fa-cart-shopping"></i>Adicionar ao carrinho</button>
+                                            </form>
+                                            <?php
+                                                if(isset($_POST[$dados['ID']])){
+                                                    $sql_code_cart = $mysqli->prepare("INSERT INTO `item` (`Nome`, `Quantidade`, `PrecoItem`, `IDProduto`, `IDVenda`) VALUES ('sfasdsf',1,1,2,1)");
+                                                    //$sql_code_cart->bind_param("siiii", null, null, null,null,'1');
+                                                    $sql_code_cart->execute(); 
+                                                }
+                                            ?>
                                         </div>
                                     </div>
                                 </div>
