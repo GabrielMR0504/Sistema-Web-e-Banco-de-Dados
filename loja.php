@@ -177,9 +177,34 @@
                                             </form>
                                             <?php
                                                 if(isset($_POST[$dados['ID']])){
-                                                    $sql_code_cart = $mysqli->prepare("INSERT INTO `item` (`Nome`, `Quantidade`, `PrecoItem`, `IDProduto`, `IDVenda`) VALUES ('sfasdsf',1,1,2,1)");
-                                                    //$sql_code_cart->bind_param("siiii", null, null, null,null,'1');
-                                                    $sql_code_cart->execute(); 
+                                                    $sql_code_item = "SELECT * FROM item where IDProduto =  " . $dados['ID'] ." and IDVenda = 1";
+                                                    $sql_query_item = $mysqli-> query($sql_code_item) or die("Erro ao consultar catálogo de produtos! " . $mysqli->error);
+                                                    $qnt_item = $sql_query_item->num_rows;
+                                                    if($dados['Estoque'] < 1){
+                                                        echo "Desculpe, este produto não está mais disponível :(";
+                                                    }
+                                                    else{
+                                                        if($qnt_item<1){
+                                                            //$sql_code_cart = $mysqli->prepare("INSERT INTO `item` (`Nome`, `Quantidade`, `PrecoItem`, `IDProduto`, `IDVenda`) VALUES ('ADFS',1,10,4,1)");
+                                                            $sql_code_cart = $mysqli->prepare("INSERT INTO `item` (`Nome`, `Quantidade`, `PrecoItem`, `IDProduto`, `IDVenda`) VALUES ('" . $dados['Nome'] . "',1," . $dados['Preco'] . "," . $dados['ID'] . ",1)");
+                                                            //$sql_code_cart->bind_param("siiii", null, null, null,2,'1');
+                                                            
+                                                            $sql_code_cart->execute();
+                                                            //header("Location: loja.php"); 
+                                                        }
+                                                        else{
+                                                            $sql_code_item_num = "SELECT * FROM item where IDProduto = " . $dados['ID'] ." and IDVenda = 1";
+                                                            $sql_query_item_num = $mysqli-> query($sql_code_item_num) or die("Erro ao consultar catálogo de produtos! " . $mysqli->error);
+                                                            $qnt_item_num = $sql_query_item_num->fetch_assoc();
+                                                            $resul = $sql_query_item_num ->fetch_assoc();
+
+                                                            $sql_code_cart = $mysqli->prepare("UPDATE `item`  SET Quantidade = " . $qnt_item_num['Quantidade'] . "+1 where IDProduto = " . $dados['ID'] . " AND IDVenda = 1");
+                                                            echo "Mais um produto adicionado!";
+                                                            
+                                                            $sql_code_cart->execute();   
+                                                        }
+                                                        //header("Location: loja.php");
+                                                    }
                                                 }
                                             ?>
                                         </div>
