@@ -21,7 +21,6 @@
         <option value="cartao" selected>Cartão de Crédito</option>
       </select>
     </div>
-
     <div class="col-md-6 mb-3">
       <label for="cc-nome">Nome no cartão</label>
       <input type="text" class="form-control" id="cc-nome" placeholder="" required="">
