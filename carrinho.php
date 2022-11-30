@@ -59,7 +59,7 @@ include('conexao.php');
     ?>
     <div class="container" id="inferior">
         <div class="row">
-            <div class="col-lg-12 col-12" >
+            <div class="col-lg-12 col-12">
                 <h3>Produtos</h3>
                 <div class="d-flex justify-content-center mt-3 pay_container" style="margin-left: 1005px">
                     <button type="submit" name="registrar" class="btn pay_btn">Pagar</button>
@@ -99,7 +99,18 @@ include('conexao.php');
                     }
                 }
                 ?>
-                
+                <div>
+                    <h3><b>Total da compra:</b> <?php
+                                                $sql_code2 = "SELECT * FROM item";
+                                                $sql_query2 = $mysqli->query($sql_code) or die("Erro ao consultar catálogo de produtos! " . $mysqli->error);
+                                                $item = $sql_query2->fetch_assoc();
+                                                $itemId = $item['IDVenda'];
+                                                $sql_codeCompra = "SELECT PrecoTotal FROM venda where ID = '$itemId'";
+                                                $sql_queryTotalCompra = $mysqli->query($sql_codeCompra) or die("Erro ao consultar preço total da venda! " . $mysqli->error);
+                                                $preco = $sql_queryTotalCompra->fetch_assoc();
+                                                echo $preco['PrecoTotal'];
+                                               ?></h3>
+                </div>
             </div>
         </div>
     </div>
