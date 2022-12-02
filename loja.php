@@ -15,7 +15,7 @@ $qnt = $sql_query->num_rows;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta lang="PT-BR">
     <title>Loja de Informática</title>
-    <link rel="sortcut icon" href="logo-portal.png" type="image/png" />
+    <link rel="sortcut icon" href="Imagens/logo_loja.png" type="image/png" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
     <link rel="stylesheet" href="loja.css">
@@ -26,7 +26,7 @@ $qnt = $sql_query->num_rows;
     <nav class="navbar navbar-expand-md bg-dark navbar-dark">
         <!-- Brand -->
         <a class="navbar-brand" href="#">
-            <img src="logo-portal.png" alt="Logo" style="width:60px;">
+            <img src="Imagens/logo_loja.png" alt="Logo" style="width:60px;">
         </a>
         <!-- Navbar links -->
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
@@ -191,8 +191,8 @@ $qnt = $sql_query->num_rows;
                                                     //$sql_code_cart = $mysqli->prepare("INSERT INTO `item` (`Nome`, `Quantidade`, `PrecoItem`, `IDProduto`, `IDVenda`) VALUES ('ADFS',1,10,4,1)");
                                                     $sql_code_cart = $mysqli->prepare("INSERT INTO `item` (`Quantidade`, `PrecoItem`, `IDProduto`, `IDVenda`) VALUES (1," . $dados['Preco'] . "," . $dados['ID'] . "," . $_SESSION['idvenda'] . ")");
                                                     //$sql_code_cart->bind_param("siiii", null, null, null,2,'1');
-
                                                     $sql_code_cart->execute();
+                                                    echo "Produto adicionado no carrinho!";
                                                     // 
                                                 } else {
 
@@ -301,7 +301,7 @@ $qnt = $sql_query->num_rows;
     ?>
     <footer id="Autores">
         <p class="footer">Copyright © 2022 - Banco de Dados - Jorge Hiroki - Rafael Lima - Gabriela Guerra - Gabriel de Medeiros</p>
-        <img src="logo-portal.png">
+        <img src="Imagens/logo_loja.png">
     </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
