@@ -11,10 +11,10 @@ include('conexao.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta lang="PT-BR">
     <title>Loja de Informática</title>
-    <link rel="sortcut icon" href="logo-portal.png" type="image/png" />
+    <link rel="sortcut icon" href="Imagens/logo_loja.png" type="image/png" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
-    <link rel="stylesheet" href="portal.css">
+    <link rel="stylesheet" href="loja.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="styleLogin.css" media="screen" />
 </head>
@@ -23,7 +23,7 @@ include('conexao.php');
     <nav class="navbar navbar-expand-md bg-dark navbar-dark">
         <!-- Brand -->
         <a class="navbar-brand" href="#">
-            <img src="logo-portal.png" alt="Logo" style="width:60px;">
+            <img src="Imagens/logo_loja.png" alt="Logo" style="width:60px;">
         </a>
         <!-- Navbar links -->
         <!-- Toggler/collapsibe Button -->
