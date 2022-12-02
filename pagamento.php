@@ -2,23 +2,29 @@
 include('protect.php');
 include('conexao.php');
 //echo $_SESSION['nome'];
-if (isset($_POST['tipo']) || isset($_POST['nome']) || isset($_POST['numero']) || isset($_POST['dataExp']) || isset($_POST['cvv']) || isset($_POST['cpf'])) {
+
+if (isset($_POST['tipo']) || isset($_POST['nome']) || isset($_POST['numero']) || isset($_POST['dataExp']) || isset($_POST['cvv']) || isset($_POST['cpf']) || isset($_POST['endereco'])) {
+  
   //limpando as variavei
   $tipo = $mysqli->real_escape_string($_POST['tipo']);
   $nome = $mysqli->real_escape_string($_POST['nome']);
   $numero = $mysqli->real_escape_string($_POST['numero']);
   $dataexp = $mysqli->real_escape_string($_POST['dataexp']);
   $cvv = $mysqli->real_escape_string($_POST['cvv']);
+  $endereco = $mysqli->real_escape_string($_POST['endereco']);
   $cpf = $_SESSION['cpf'];
-  $sql_code = $mysqli->prepare("INSERT INTO `formapagamento` (`Tipo`, `Nome`, `Numero`, `DataExp`, `CVV`) VALUES (?,?,?,?,?)");
-  $sql_code->bind_param("ssssss", $tipo, $nome, $numero, $dataexp, $cvv);
+  $id =  $_SESSION['idvenda'];
+  
+  echo $_SESSION['idvenda'];
+  $sql_code = $mysqli->prepare("INSERT INTO `formapagamento` (`ID`,`Tipo`, `Nome`, `Numero`, `DataExp`, `CVV`,`CPFCliente`) VALUES (?,?,?,?,?,?,?)");
+  $sql_code->bind_param("issssss",$id,$tipo, $nome, $numero, $dataexp, $cvv,$cpf);
   $sql_code->execute();
+  
+  $sql_code_endereco= $mysqli->query("UPDATE `venda`  SET `Endereco` = '".$endereco."' WHERE ID = ".$_SESSION['idvenda']."") or die("ESSE ERRO2: " . $mysqli->error);  
 
-  //$sql_codeVenda = $mysqli->prepare("UPDATE TABLE `venda` SET (`Tipo`, `Nome`, `Numero`, `DataExp`, `CVV`) VALUES (?,?,?,?,?)");
-  //$sql_code->bind_param("ssssss", $tipo, $nome, $numero, $dataexp, $cvv);
-  //echo "Registro concluído";
-  //$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL: " . $mysqli->error);
-  header("Location: carrinho.php");
+  $sql_code_endereco= $mysqli->query("UPDATE `venda`  SET `IDFormaPagamento` = ".$_SESSION['idvenda']." WHERE ID = ".$_SESSION['idvenda']."") or die("ESSE ERRO3: " . $mysqli->error);    
+
+  header("Location: final.php");
 }
 ?>
 
@@ -55,8 +61,8 @@ if (isset($_POST['tipo']) || isset($_POST['nome']) || isset($_POST['numero']) ||
       <div class="dropdown">
         <h4 class="mb-3">Pagamento</h4>
         <select name="tipo">
-          <option value="debito">Cartão de debito</option>
-          <option value="credito" selected>Cartão de Crédito</option>
+          <option value="debito">Cartao de Debito</option>
+          <option value="credito" selected>Cartao de Credito</option>
         </select>
       </div>
       <div class="col-md-6 mb-3">
@@ -91,15 +97,15 @@ if (isset($_POST['tipo']) || isset($_POST['nome']) || isset($_POST['numero']) ||
       </div>
       <div class="col-md-6 mb-3">
         <label for="cc-nome">Endereço</label>
-        <input type="text" name="nome" class="form-control" id="cc-nome" placeholder="" required="">
+        <input type="text" name="endereco" class="form-control" id="cc-nome" placeholder="" required="">
         <small class="text-muted">Endereço de entrega</small>
         <div class="invalid-feedback">
           O endereço é obrigatório.
         </div>
       </div>
-      
+      <button name="botaoFinalizar" class="btn btn-primary btn-lg btn-block" type="submit" style="background-color: #ec600f;">Finalizar pagamento</button>
     </form>
-    <button class="btn btn-primary btn-lg btn-block" type="submit" style="background-color: #ec600f;"><a href="final.php" link="white" vlink="white" style="color: white">Finalizar pagamento</a></button>
+    
   </div>
 
 </body>

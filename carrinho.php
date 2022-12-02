@@ -36,7 +36,7 @@ include('conexao.php');
 
     <!-- ITENS -->
     <?php
-    $sql_code = "SELECT * FROM item";
+    $sql_code = "SELECT * FROM item where IDVenda = ".$_SESSION['idvenda']."";
     $sql_query = $mysqli->query($sql_code) or die("Erro ao consultar catálogo de produtos! " . $mysqli->error);
     $qnt = $sql_query->num_rows;
     ?>
@@ -91,9 +91,10 @@ include('conexao.php');
                 ?>
                 <div>
                     <h3><b>Total da compra: R$</b> <?php
-                                                $sql_code2 = "SELECT * FROM item";
+                                                $sql_code2 = "SELECT * FROM item where IDVenda = ".$_SESSION['idvenda']."";
                                                 $sql_query2 = $mysqli->query($sql_code) or die("Erro ao consultar catálogo de produtos! " . $mysqli->error);
                                                 $item = $sql_query2->fetch_assoc();
+                                    
                                                 if (isset($item)) {
                                                     $itemId = $item['IDVenda'];
                                                     $sql_codeCompra = "SELECT PrecoTotal FROM venda where ID = '$itemId'";
@@ -101,7 +102,7 @@ include('conexao.php');
                                                     $preco = $sql_queryTotalCompra->fetch_assoc();
                                                     echo $preco['PrecoTotal'];
                                                 }
-                                                ?>,00</h3>
+                                                ?></h3>
                 </div>  
             </div>
         </div>

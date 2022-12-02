@@ -31,7 +31,7 @@ if (isset($_POST['email']) || isset($_POST['senha']) || isset($_POST['cpf']) || 
 
         $sql_code = $mysqli->prepare("INSERT INTO `cliente` (`CPF`, `Nome`, `Idade`, `Endereco`, `Email`, `Senha`) VALUES (?,?,?,?,?,?)");
         $sql_code->bind_param("ssisss", $cpf, $nome, $idade, $endereco, $email, $senha);
-        $sql_code->execute(); 
+        $sql_code->execute() or die("" . $mysqli->error); 
         echo "Registro concluído";
 
        //$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL: " . $mysqli->error);
