@@ -26,23 +26,6 @@ include('conexao.php');
             <img src="logo-portal.png" alt="Logo" style="width:60px;">
         </a>
         <!-- Navbar links -->
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#carrossel">Promocões</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#inferior">Produtos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#Autores">Autores</a>
-                </li>
-            </ul>
-        </div>
-        <form class="form-inline" action="/action_page.php">
-            <input class="form-control mr-sm-2" type="text" placeholder="Pesquisar">
-            <button class="btn btn-light" type="submit" id="botaopesquisa">Pesquisar</button>
-        </form>
         <!-- Toggler/collapsibe Button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
@@ -60,10 +43,17 @@ include('conexao.php');
     <div class="container" id="inferior">
         <div class="row">
             <div class="col-lg-12 col-12">
-                <h3>Produtos</h3>
-                <div class="d-flex justify-content-center mt-3 pay_container" style="margin-left: 1005px">
-                    <button type="submit" name="registrar" class="btn pay_btn">Pagar</button>
+                <h1>Produtos</h1>
+
+                <div class="divBotoes" >
+                    <div class="d-flex justify-content-center mt-3 pay_container" style="margin-left: 1005px;">
+                        <button type="submit" name="pagar" class="btn pay_btn"><a href="pagamento.php" link="white" vlink="white">Pagar</a></button>
+                    </div>
+                    <div class="d-flex justify-content-center mt-3 pay_container" style="margin-left: 1005px;">
+                        <button type="submit" name="voltarLoja" class="btn pay_btn"><a href="loja.php">Voltar para loja</a></button>
+                    </div>
                 </div>
+
                 <!-- FAZER UM IF COM ALGO COMO NADA CADSTRADO SE NAO TIVER ITENS-->
                 <?php
                 if ($qnt < 1) {
@@ -109,7 +99,7 @@ include('conexao.php');
                                                 $sql_queryTotalCompra = $mysqli->query($sql_codeCompra) or die("Erro ao consultar preço total da venda! " . $mysqli->error);
                                                 $preco = $sql_queryTotalCompra->fetch_assoc();
                                                 echo $preco['PrecoTotal'];
-                                               ?></h3>
+                                                ?></h3>
                 </div>
             </div>
         </div>
