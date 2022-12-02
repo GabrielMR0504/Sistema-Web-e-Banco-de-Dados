@@ -25,7 +25,7 @@ $qnt = $sql_query->num_rows;
 <body>
     <nav class="navbar navbar-expand-md bg-dark navbar-dark">
         <!-- Brand -->
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="loja.php">
             <img src="Imagens/logo_loja.png" alt="Logo" style="width:60px;">
         </a>
         <!-- Navbar links -->
@@ -225,8 +225,9 @@ $qnt = $sql_query->num_rows;
     } //pesquisa sendo feita
     else {
         $pesquisa = $mysqli->real_escape_string($_GET['busca']);
-        $sql_pesquisa = "SELECT * FROM PRODUTO WHERE Nome like '%$pesquisa%' or Descricao like '%$pesquisa%' or Tipo like '%$pesquisa%' or Marca like '%$pesquisa%'";
-        $sql_query_pesquisa = $mysqli->query($sql_pesquisa) or die("ERRO AO CONSULTAR" . $mysqli->error);
+        $sql_pesquisa = "SELECT  * FROM PRODUTO WHERE Nome like '%$pesquisa%' or Descricao like '%$pesquisa%' or Tipo like '%$pesquisa%' or Marca like '%$pesquisa%'";
+        //$sql_pesquisa = "SELECT ID,Imagem, Nome, Descricao, Marca, Tipo, Preco FROM PRODUTO Group by Tipo Having Nome like '%$pesquisa%' or Descricao like '%$pesquisa%' or Tipo like '%$pesquisa%' or Marca like '%$pesquisa%'";
+        $sql_query_pesquisa = $mysqli-> query($sql_pesquisa) or die("ERRO AO CONSULTAR" . $mysqli->error);
         if ($sql_query_pesquisa->num_rows == 0) {
         ?>
 
