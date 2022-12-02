@@ -1,10 +1,22 @@
 <?php
 include('protect.php');
 include('conexao.php');
+
 $sql_code = "SELECT * FROM produto";
 $sql_query = $mysqli->query($sql_code) or die("Erro ao consultar catálogo de produtos! " . $mysqli->error);
 $qnt = $sql_query->num_rows;
+$hideen = 0;
+
+    if (isset($_POST['ofertas'])) {
+        $hideen = 1;
+        $sql_code = "SELECT * FROM produto GROUP BY Preco HAVING Preco < 500";
+        $sql_query = $mysqli->query($sql_code) or die("Erro ao consultar catálogo de produtos! " . $mysqli->error);
+        $qnt = $sql_query->num_rows;
+    } 
+
+
 ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -42,6 +54,9 @@ $qnt = $sql_query->num_rows;
                 <li class="nav-item">
                     <a class="nav-link" href="carrinho.php">Carrinho</a>
                 </li>
+                <form action="" method="post">
+                    <button name=ofertas class="ofertas" type="submit"><i class="fa-sharp fa-solid fa-cart-shopping"></i>Até R$500,00</button>
+                </form>
             </ul>
         </div>
         <form action="">
@@ -63,8 +78,10 @@ $qnt = $sql_query->num_rows;
     <?php
     if (!isset($_GET['busca'])) {
     ?>
+      <?php
+        if($hideen == 0) { ?>
 
-        <div class="lancamentos">
+                <div class="lancamentos">
             <div class="container" id="lancamentos">
                 <div class="row">
                     <div class="col-12">
@@ -137,7 +154,9 @@ $qnt = $sql_query->num_rows;
                 </div>
             </div>
         </div>
-
+        <?php
+        }
+        ?>
         </div>
 
         <!-- ITENS -->
@@ -146,6 +165,7 @@ $qnt = $sql_query->num_rows;
             <div class="row">
                 <div class="col-lg-10 col-12">
                     <h3>Produtos</h3>
+                    
                     <?php
                     if ($qnt < 1) {
                     ?>
@@ -162,6 +182,7 @@ $qnt = $sql_query->num_rows;
                     } else {
                         while ($dados = $sql_query->fetch_assoc()) {
                         ?>
+                        
                             <div class="card mb-3" style="max-width: 700px;">
                                 <div class="row no-gutters">
                                     <div class="col-md-4">
