@@ -17,7 +17,7 @@ if (isset($_POST['tipo']) || isset($_POST['nome']) || isset($_POST['numero']) ||
   
   echo $_SESSION['idvenda'];
   $sql_code = $mysqli->prepare("INSERT INTO `formapagamento` (`ID`,`Tipo`, `Nome`, `Numero`, `DataExp`, `CVV`,`CPFCliente`) VALUES (?,?,?,?,?,?,?)");
-  $sql_code->bind_param("issssss",$id,$tipo, $nome, $numero, $dataexp, $cvv,$cpf);
+  $sql_code->bind_param("issssss",$_SESSION['idvenda'],$tipo, $nome, $numero, $dataexp, $cvv,$cpf);
   $sql_code->execute();
   
   $sql_code_endereco= $mysqli->query("UPDATE `venda`  SET `Endereco` = '".$endereco."' WHERE ID = ".$_SESSION['idvenda']."") or die("ESSE ERRO2: " . $mysqli->error);  

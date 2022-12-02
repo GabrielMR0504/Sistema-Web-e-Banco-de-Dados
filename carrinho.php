@@ -97,7 +97,7 @@ include('conexao.php');
                                     
                                                 if (isset($item)) {
                                                     $itemId = $item['IDVenda'];
-                                                    $sql_codeCompra = "SELECT PrecoTotal FROM venda where ID = '$itemId'";
+                                                    $sql_codeCompra = "SELECT PrecoTotal FROM venda where ID = ".$_SESSION['idvenda']." ";
                                                     $sql_queryTotalCompra = $mysqli->query($sql_codeCompra) or die("Erro ao consultar preço total da venda! " . $mysqli->error);
                                                     $preco = $sql_queryTotalCompra->fetch_assoc();
                                                     echo $preco['PrecoTotal'];
