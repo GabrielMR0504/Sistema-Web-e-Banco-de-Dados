@@ -42,6 +42,21 @@ include('conexao.php');
             <div class="col-lg-12 col-12" style="margin-top: 100px;margin-right:10000px">
                 <h1>Compra finalizada!</h1>
                 <h2>Sua entrega será realiza em até 365 dias uteis!</h2>
+                <h5> <br> Dados da compra: <br><?php
+                                        $sql_code = "SELECT c.Nome, v.DataVenda, v.PrecoTotal FROM Cliente c join venda v on c.CPF= v.CPFCliente WHERE v.ID=  ".$_SESSION['idvenda']."";
+                                         $sql_query2 = $mysqli->query($sql_code) or die("Erro ao consultar catálogo de produtos! " . $mysqli->error);
+                                         $item = $sql_query2->fetch_assoc();
+                                         echo 'Nome: '.$item['Nome'].' ';
+                                         ?>
+                                         <br>
+                                         <?php
+                                         echo 'Data da compra: '.$item['DataVenda'];
+                                        ?> 
+                                        <br>
+                                        <?php
+                                         echo 'Valor total: R$ '.$item['PrecoTotal'].'.00';
+                                        ?> 
+                                        </h5>
             </div>
             <div class="divBotoes" style="background-color: white;">
                     <div class="d-flex justify-content-center mt-3 pay_container" style="margin-left: 10px;margin-top:60px;width:100%;">
