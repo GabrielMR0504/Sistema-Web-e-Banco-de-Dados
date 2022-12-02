@@ -45,25 +45,9 @@ if(isset($_POST['tipo']) || isset($_POST['nome']) || isset($_POST['numero']) || 
         <!-- Navbar links -->
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#carrossel">Promocões</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#inferior">Produtos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#Autores">Autores</a>
-                </li>
             </ul>
         </div>
-        <form class="form-inline" action="/action_page.php">
-            <input class="form-control mr-sm-2" type="text" placeholder="Pesquisar">
-            <button class="btn btn-light" type="submit" id="botaopesquisa">Pesquisar</button>
-        </form>
         <!-- Toggler/collapsibe Button -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
     </nav>
 
 
