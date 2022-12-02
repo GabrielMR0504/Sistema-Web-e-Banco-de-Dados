@@ -36,72 +36,18 @@ include('conexao.php');
 
     <!-- ITENS -->
     <?php
-    $sql_code = "SELECT IDProduto, Quantidade, PrecoItem, count(*), p.Nome FROM item i join produto p GROUP BY p.Tipo HAVING i.IDVenda = ".$_SESSION['idvenda']." AND i.IDProduto = p.ID";
-    $sql_query = $mysqli->query($sql_code) or die("Erro ao consultar catálogo de produtos! " . $mysqli->error);
-    $qnt = $sql_query->num_rows;
     ?>
     <div class="container" id="inferior">
         <div class="row">
-            <div class="col-lg-12 col-12">
-                <h1>Resumo</h1>
-
-                <div class="divBotoes" style="background-color: white;">
-                    <div class="d-flex justify-content-center mt-3 pay_container" style="margin-left: 1005px;">
-                        <button type="submit" name="voltarLoja" class="btn pay_btn"><a href="loja.php" style="color: white;">Voltar para loja</a></button>
+            <div class="col-lg-12 col-12" style="margin-top: 100px;margin-right:10000px">
+                <h1>Compra finalizada!</h1>
+                <h2>Sua entrega será realiza em até 365 dias uteis!</h2>
+            </div>
+            <div class="divBotoes" style="background-color: white;">
+                    <div class="d-flex justify-content-center mt-3 pay_container" style="margin-left: 10px;margin-top:60px;width:100%;">
+                        <button type="submit" name="voltarLoja" class="btn pay_btn"><a href="index.php" style="color: white;">Voltar para o início</a></button>
                     </div>
                 </div>
-
-                <!-- FAZER UM IF COM ALGO COMO NADA CADSTRADO SE NAO TIVER ITENS-->
-                <?php
-                if ($qnt < 1) {
-                ?>
-                    <div class="card mb-3" style="max-width: 540px;">
-                        <div class="row no-gutters">
-                            <div class="col-lg-12">
-                                <div class="card-body">
-                                    <h5 class="card-title">Não há produtos no carrinho</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- else aqui-->
-                    <?php
-                } else {
-                    while ($dados = $sql_query->fetch_assoc()) {
-                    ?>
-                        <div class="card mb-3" style="max-width: 540px;">
-                            <div class="row no-gutters">
-                                <div class="col-lg-12">
-                                    <div class="card-body">
-                                        <h5 class="card-title"><?php echo $dados['Nome']; ?></h5>
-                                        <p class="card-text">Quantidade: <?php echo $dados['Quantidade']; ?></p>
-                                        <p class="card-text">R$ <?php echo $dados['PrecoItem']; ?>,00</p>
-                                        <p class="card-text">Id do produto: <?php echo $dados['IDProduto']; ?></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                <?php
-                    }
-                }
-                ?>
-                <div>
-                    <h3><b>Total da compra: R$</b> <?php
-                                                $sql_code2 = "SELECT * FROM item where IDVenda = ".$_SESSION['idvenda']."";
-                                                $sql_query2 = $mysqli->query($sql_code) or die("Erro ao consultar catálogo de produtos! " . $mysqli->error);
-                                                $item = $sql_query2->fetch_assoc();
-                                    
-                                                if (isset($item)) {
-                                                    $itemId = $item['IDVenda'];
-                                                    $sql_codeCompra = "SELECT PrecoTotal FROM venda where ID = ".$_SESSION['idvenda']." ";
-                                                    $sql_queryTotalCompra = $mysqli->query($sql_codeCompra) or die("Erro ao consultar preço total da venda! " . $mysqli->error);
-                                                    $preco = $sql_queryTotalCompra->fetch_assoc();
-                                                    echo $preco['PrecoTotal'];
-                                                }
-                                                ?></h3>
-                </div>  
-            </div>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
