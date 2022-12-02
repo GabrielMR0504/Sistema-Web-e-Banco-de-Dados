@@ -94,13 +94,15 @@ include('conexao.php');
                                                 $sql_code2 = "SELECT * FROM item";
                                                 $sql_query2 = $mysqli->query($sql_code) or die("Erro ao consultar catálogo de produtos! " . $mysqli->error);
                                                 $item = $sql_query2->fetch_assoc();
-                                                $itemId = $item['IDVenda'];
-                                                $sql_codeCompra = "SELECT PrecoTotal FROM venda where ID = '$itemId'";
-                                                $sql_queryTotalCompra = $mysqli->query($sql_codeCompra) or die("Erro ao consultar preço total da venda! " . $mysqli->error);
-                                                $preco = $sql_queryTotalCompra->fetch_assoc();
-                                                echo $preco['PrecoTotal'];
+                                                if (isset($item)) {
+                                                    $itemId = $item['IDVenda'];
+                                                    $sql_codeCompra = "SELECT PrecoTotal FROM venda where ID = '$itemId'";
+                                                    $sql_queryTotalCompra = $mysqli->query($sql_codeCompra) or die("Erro ao consultar preço total da venda! " . $mysqli->error);
+                                                    $preco = $sql_queryTotalCompra->fetch_assoc();
+                                                    echo $preco['PrecoTotal'];
+                                                }
                                                 ?></h3>
-                </div>
+                </div>  
             </div>
         </div>
     </div>
