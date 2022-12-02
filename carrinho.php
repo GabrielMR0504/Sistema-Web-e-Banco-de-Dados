@@ -45,7 +45,7 @@ include('conexao.php');
             <div class="col-lg-12 col-12">
                 <h1>Produtos</h1>
 
-                <div class="divBotoes" >
+                <div class="divBotoes" style="background-color: white;">
                     <div class="d-flex justify-content-center mt-3 pay_container" style="margin-left: 1005px;">
                         <button type="submit" name="pagar" class="btn pay_btn"><a href="pagamento.php" style="color: white;">Pagar</a></button>
                     </div>
