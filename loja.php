@@ -47,12 +47,19 @@
         <form action="">
             <input name="busca" placeholder="Pesquisar" type="text">
             <button class="btn btn-light" type="submit">Pesquisar</button>
-          </form>
+        </form>
           <!-- Toggler/collapsibe Button -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+        <div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        
+        <div  class="col-md-6">
+            <a><button href="carrinho.php" class="btn btn-light" type="submit">Carrinho</button></a>
+        </div>
       </nav>
+      
     <?php
     if(!isset($_GET['busca'])){
         ?>
