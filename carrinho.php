@@ -47,10 +47,10 @@ include('conexao.php');
 
                 <div class="divBotoes" >
                     <div class="d-flex justify-content-center mt-3 pay_container" style="margin-left: 1005px;">
-                        <button type="submit" name="pagar" class="btn pay_btn"><a href="pagamento.php" link="white" vlink="white">Pagar</a></button>
+                        <button type="submit" name="pagar" class="btn pay_btn"><a href="pagamento.php" style="color: white;">Pagar</a></button>
                     </div>
                     <div class="d-flex justify-content-center mt-3 pay_container" style="margin-left: 1005px;">
-                        <button type="submit" name="voltarLoja" class="btn pay_btn"><a href="loja.php">Voltar para loja</a></button>
+                        <button type="submit" name="voltarLoja" class="btn pay_btn"><a href="loja.php" style="color: white;">Voltar para loja</a></button>
                     </div>
                 </div>
 
@@ -90,7 +90,7 @@ include('conexao.php');
                 }
                 ?>
                 <div>
-                    <h3><b>Total da compra:</b> <?php
+                    <h3><b>Total da compra: R$</b> <?php
                                                 $sql_code2 = "SELECT * FROM item";
                                                 $sql_query2 = $mysqli->query($sql_code) or die("Erro ao consultar catálogo de produtos! " . $mysqli->error);
                                                 $item = $sql_query2->fetch_assoc();
@@ -101,7 +101,7 @@ include('conexao.php');
                                                     $preco = $sql_queryTotalCompra->fetch_assoc();
                                                     echo $preco['PrecoTotal'];
                                                 }
-                                                ?></h3>
+                                                ?>,00</h3>
                 </div>  
             </div>
         </div>

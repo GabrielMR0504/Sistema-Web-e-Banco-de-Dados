@@ -88,9 +88,18 @@ if (isset($_POST['tipo']) || isset($_POST['nome']) || isset($_POST['numero']) ||
           </div>
         </div>
         <hr class="mb-4">
-        <button class="btn btn-primary btn-lg btn-block" type="submit" style="background-color: #ec600f;">Finalizar compra</button>
       </div>
+      <div class="col-md-6 mb-3">
+        <label for="cc-nome">Endereço</label>
+        <input type="text" name="nome" class="form-control" id="cc-nome" placeholder="" required="">
+        <small class="text-muted">Endereço de entrega</small>
+        <div class="invalid-feedback">
+          O endereço é obrigatório.
+        </div>
+      </div>
+      
     </form>
+    <button class="btn btn-primary btn-lg btn-block" type="submit" style="background-color: #ec600f;"><a href="final.php" link="white" vlink="white" style="color: white">Finalizar pagamento</a></button>
   </div>
 
 </body>

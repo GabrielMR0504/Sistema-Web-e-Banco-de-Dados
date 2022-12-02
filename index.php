@@ -17,17 +17,15 @@
 			$senha = $mysqli->real_escape_string($_POST['senha']);  
 			$sql_code = "SELECT * FROM cliente WHERE Email = '$email' AND Senha = '$senha'";
 			$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL: " . $mysqli->error);
-
-			
-
 			$qntd = $sql_query->num_rows;
+
 			if($qntd == 1) {
 				$usuario = $sql_query->fetch_assoc();
 
 				if(!isset($_SESSION)) {
 					session_start();
 				}
-				$sql_cria_venda = "INSERT INTO `venda` (`DataVenda`, `PrecoTotal`, `Endereco`, `CPFCliente`, `IDFormaPagamento`) VALUES ('a',' 0', 'ab', '".$usuario['CPF']."', '10') ";
+				$sql_cria_venda = "INSERT INTO `venda` (`DataVenda`, `PrecoTotal`, `Endereco`, `CPFCliente`, `IDFormaPagamento`) VALUES (null,0, null, '".$usuario['CPF']."', '1') ";
 				$sql_gera_venda = $mysqli->query($sql_cria_venda) or die("ESSE ERRO: " . $mysqli->error);
 				
 				$sqlSalvaID = $mysqli->query("SELECT * FROM venda WHERE CPFCliente = ".$usuario['CPF']." AND ID = (SELECT MAX(ID) FROM venda WHERE CPFCliente = ".$usuario['CPF'].")") or die("Falha na execução do código SQL: " . $mysqli->error);
