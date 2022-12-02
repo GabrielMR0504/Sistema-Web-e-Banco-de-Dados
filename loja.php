@@ -147,6 +147,27 @@ $qnt = $sql_query->num_rows;
             <div class="row">
                 <div class="col-lg-10 col-12">
                     <h3>Produtos</h3>
+                    <form action="" method="GET">
+                        <div>
+                            <select name="organizar">
+                                <option value="menorValor">Preço inferior a R$500,00</option>
+                                <option value="normal" selected>Selecione</option>
+                            </select>
+                            <?php   $ordem = $_GET['organizar'];  ?>
+                        </div>
+                    </form>
+                    <?php
+
+                    
+                    if ($ordem == "menorValor") {
+                        $sql_org = "SELECT * FROM produto GROUP BY Preco HAVING Preco < 500";
+                        $sql_query = $mysqli->query($sql_org) or die("Erro ao consultar catálogo de produtos! " . $mysqli->error);
+                        } else {
+                        $sql_org = "SELECT * FROM produto";
+                        $sql_query = $mysqli->query($sql_org) or die("Erro ao consultar catálogo de produtos! " . $mysqli->error);
+                    }
+                    ?>
+                    </select>
                     <?php
                     if ($qnt < 1) {
                     ?>
@@ -227,7 +248,7 @@ $qnt = $sql_query->num_rows;
         $pesquisa = $mysqli->real_escape_string($_GET['busca']);
         $sql_pesquisa = "SELECT  * FROM PRODUTO WHERE Nome like '%$pesquisa%' or Descricao like '%$pesquisa%' or Tipo like '%$pesquisa%' or Marca like '%$pesquisa%'";
         //$sql_pesquisa = "SELECT ID,Imagem, Nome, Descricao, Marca, Tipo, Preco FROM PRODUTO Group by Tipo Having Nome like '%$pesquisa%' or Descricao like '%$pesquisa%' or Tipo like '%$pesquisa%' or Marca like '%$pesquisa%'";
-        $sql_query_pesquisa = $mysqli-> query($sql_pesquisa) or die("ERRO AO CONSULTAR" . $mysqli->error);
+        $sql_query_pesquisa = $mysqli->query($sql_pesquisa) or die("ERRO AO CONSULTAR" . $mysqli->error);
         if ($sql_query_pesquisa->num_rows == 0) {
         ?>
 
