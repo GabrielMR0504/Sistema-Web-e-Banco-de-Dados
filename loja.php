@@ -1,7 +1,6 @@
 <?php
 include('protect.php');
 include('conexao.php');
-
 $sql_code = "SELECT * FROM produto";
 $sql_query = $mysqli->query($sql_code) or die("Erro ao consultar catálogo de produtos! " . $mysqli->error);
 $qnt = $sql_query->num_rows;
@@ -147,27 +146,6 @@ $qnt = $sql_query->num_rows;
             <div class="row">
                 <div class="col-lg-10 col-12">
                     <h3>Produtos</h3>
-                    <form action="" method="GET">
-                        <div>
-                            <select name="organizar">
-                                <option value="menorValor">Preço inferior a R$500,00</option>
-                                <option value="normal" selected>Selecione</option>
-                            </select>
-                            <?php   $ordem = $_GET['organizar'];  ?>
-                        </div>
-                    </form>
-                    <?php
-
-                    
-                    if ($ordem == "menorValor") {
-                        $sql_org = "SELECT * FROM produto GROUP BY Preco HAVING Preco < 500";
-                        $sql_query = $mysqli->query($sql_org) or die("Erro ao consultar catálogo de produtos! " . $mysqli->error);
-                        } else {
-                        $sql_org = "SELECT * FROM produto";
-                        $sql_query = $mysqli->query($sql_org) or die("Erro ao consultar catálogo de produtos! " . $mysqli->error);
-                    }
-                    ?>
-                    </select>
                     <?php
                     if ($qnt < 1) {
                     ?>
