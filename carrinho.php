@@ -36,7 +36,7 @@ include('conexao.php');
 
     <!-- ITENS -->
     <?php
-    $sql_code = "SELECT * FROM item where IDVenda = ".$_SESSION['idvenda']."";
+    $sql_code = "SELECT IDProduto, Quantidade, PrecoItem, IDVenda, p.Nome FROM item i join produto p where IDVenda = ".$_SESSION['idvenda']." AND i.IDProduto = p.ID";
     $sql_query = $mysqli->query($sql_code) or die("Erro ao consultar catálogo de produtos! " . $mysqli->error);
     $qnt = $sql_query->num_rows;
     ?>

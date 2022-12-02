@@ -189,7 +189,7 @@ $qnt = $sql_query->num_rows;
 
                                                 if ($qnt_item < 1) {
                                                     //$sql_code_cart = $mysqli->prepare("INSERT INTO `item` (`Nome`, `Quantidade`, `PrecoItem`, `IDProduto`, `IDVenda`) VALUES ('ADFS',1,10,4,1)");
-                                                    $sql_code_cart = $mysqli->prepare("INSERT INTO `item` (`Nome`, `Quantidade`, `PrecoItem`, `IDProduto`, `IDVenda`) VALUES ('" . $dados['Nome'] . "',1," . $dados['Preco'] . "," . $dados['ID'] . "," . $_SESSION['idvenda'] . ")");
+                                                    $sql_code_cart = $mysqli->prepare("INSERT INTO `item` (`Quantidade`, `PrecoItem`, `IDProduto`, `IDVenda`) VALUES (1," . $dados['Preco'] . "," . $dados['ID'] . "," . $_SESSION['idvenda'] . ")");
                                                     //$sql_code_cart->bind_param("siiii", null, null, null,2,'1');
 
                                                     $sql_code_cart->execute();
@@ -265,7 +265,7 @@ $qnt = $sql_query->num_rows;
                                     $qnt_item = $sql_query_item->num_rows;
                                     if ($qnt_item < 1) {
                                         //$sql_code_cart = $mysqli->prepare("INSERT INTO `item` (`Nome`, `Quantidade`, `PrecoItem`, `IDProduto`, `IDVenda`) VALUES ('ADFS',1,10,4,1)");
-                                        $sql_code_cart = $mysqli->prepare("INSERT INTO `item` (`Nome`, `Quantidade`, `PrecoItem`, `IDProduto`, `IDVenda`) VALUES ('" . $dados['Nome'] . "',1," . $dados['Preco'] . "," . $dados['ID'] . "," . $_SESSION['idvenda'] . ")");
+                                        $sql_code_cart = $mysqli->prepare("INSERT INTO `item` (`Quantidade`, `PrecoItem`, `IDProduto`, `IDVenda`) VALUES (1," . $dados['Preco'] . "," . $dados['ID'] . "," . $_SESSION['idvenda'] . ")");
                                         //$sql_code_cart->bind_param("siiii", null, null, null,2,'1');
 
                                         echo "Produto adicionado no carrinho!";
