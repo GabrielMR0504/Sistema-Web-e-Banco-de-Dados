@@ -42,6 +42,9 @@
             <li class="nav-item">
               <a class="nav-link" href="#Autores">Autores</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="carrinho.php">Carrinho</a>
+            </li>
           </ul>
         </div>
         <form action="">
@@ -55,9 +58,9 @@
             </button>
         </div>
         
-        <div  class="col-md-6">
+        <!-- <div  class="col-md-6">
             <a><button href="carrinho.php" class="btn btn-light" type="submit">Carrinho</button></a>
-        </div>
+        </div> -->
       </nav>
       
     <?php

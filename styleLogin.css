@@ -84,3 +84,8 @@ html {
 .signUp{
     color: white;
 }
+
+.divBotoes{
+    background-color: #262626;
+    float:left;
+}
