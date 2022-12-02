@@ -1,6 +1,13 @@
 <?php
 include('protect.php');
 include('conexao.php');
+
+if(isset($_POST['cancelar'])){
+    $sql_cancelar = $mysqli->query("DELETE from venda where ID = ".$_SESSION['idvenda']."") or die("Erro ao consultar catálogo de produtos! " . $mysqli->error);
+    //$sql_cancelar->execute();
+    echo 'iamsf sdafdsuafhdsa';
+    header("Location: index.php");
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -36,9 +43,11 @@ include('conexao.php');
 
     <!-- ITENS -->
     <?php
-    $sql_code = "SELECT IDProduto, Quantidade, PrecoItem, IDVenda, p.Nome FROM item i left outer join produto p on i.IDProduto = p.ID where IDVenda = ".$_SESSION['idvenda']."";
+    $sql_code = "SELECT IDProduto, Quantidade, PrecoItem, IDVenda, p.Nome FROM item i join produto p where IDVenda = ".$_SESSION['idvenda']." AND i.IDProduto = p.ID";
     $sql_query = $mysqli->query($sql_code) or die("Erro ao consultar catálogo de produtos! " . $mysqli->error);
     $qnt = $sql_query->num_rows;
+
+    
     ?>
     <div class="container" id="inferior">
         <div class="row">
@@ -49,6 +58,11 @@ include('conexao.php');
                     <div class="d-flex justify-content-center mt-3 pay_container" style="margin-left: 1005px;">
                         <button type="submit" name="pagar" class="btn pay_btn"><a href="pagamento.php" style="color: white;">Pagar</a></button>
                     </div>
+                    <form action="" method="post">
+                    <div class="d-flex justify-content-center mt-3 pay_container" style="margin-left: 1005px;">
+                        <button type="submit" name="cancelar" class="btn pay_btn">Cancelar compra</a></button>
+                    </div>
+                    </form>
                     <div class="d-flex justify-content-center mt-3 pay_container" style="margin-left: 1005px;">
                         <button type="submit" name="voltarLoja" class="btn pay_btn"><a href="loja.php" style="color: white;">Voltar para loja</a></button>
                     </div>
@@ -56,6 +70,7 @@ include('conexao.php');
 
                 <!-- FAZER UM IF COM ALGO COMO NADA CADSTRADO SE NAO TIVER ITENS-->
                 <?php
+                
                 if ($qnt < 1) {
                 ?>
                     <div class="card mb-3" style="max-width: 540px;">
@@ -71,6 +86,7 @@ include('conexao.php');
                     <!-- else aqui-->
                     <?php
                 } else {
+                    
                     while ($dados = $sql_query->fetch_assoc()) {
                     ?>
                         <div class="card mb-3" style="max-width: 540px;">
