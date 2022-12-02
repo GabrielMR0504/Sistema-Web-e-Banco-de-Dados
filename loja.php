@@ -147,6 +147,23 @@ $qnt = $sql_query->num_rows;
             <div class="row">
                 <div class="col-lg-10 col-12">
                     <h3>Produtos</h3>
+                    <form action="" method="POST">
+
+                    <div>
+                    <select name="organizar">
+                        <option value="menorValor">Preço inferior a R$500,00</option>
+                        <option value="normal" selected>Selecione</option>
+                    </div>
+                </form>
+                <?php
+                        $ordem = $_POST['organizar'];
+                       if($ordem=="menorValor"){
+                           $sql_ordem = "SELECT Preco FROM produto GROUP BY Preco HAVING Preco < 500";
+                    } else {
+                            $sql_ordem = "SELECT * FROM produto";
+                    }
+                    ?>
+                                </select>
                     <?php
                     if ($qnt < 1) {
                     ?>
@@ -161,7 +178,7 @@ $qnt = $sql_query->num_rows;
                         </div>
                         <?php
                     } else {
-                        while ($dados = $sql_query->fetch_assoc()) {
+                        while ($dados = $sql_ordem->fetch_assoc()) {
                         ?>
                             <div class="card mb-3" style="max-width: 700px;">
                                 <div class="row no-gutters">
