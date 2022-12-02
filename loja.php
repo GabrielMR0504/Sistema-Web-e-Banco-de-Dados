@@ -147,23 +147,27 @@ $qnt = $sql_query->num_rows;
             <div class="row">
                 <div class="col-lg-10 col-12">
                     <h3>Produtos</h3>
-                    <form action="" method="POST">
+                    <form action="" method="GET">
+                        <div>
+                            <select name="organizar">
+                                <option value="menorValor">Preço inferior a R$500,00</option>
+                                <option value="normal" selected>Selecione</option>
+                            </select>
+                            <?php   $ordem = $_GET['organizar'];  ?>
+                        </div>
+                    </form>
+                    <?php
 
-                    <div>
-                    <select name="organizar">
-                        <option value="menorValor">Preço inferior a R$500,00</option>
-                        <option value="normal" selected>Selecione</option>
-                    </div>
-                </form>
-                <?php
-                        $ordem = $_POST['organizar'];
-                       if($ordem=="menorValor"){
-                           $sql_ordem = "SELECT Preco FROM produto GROUP BY Preco HAVING Preco < 500";
-                    } else {
-                            $sql_ordem = "SELECT * FROM produto";
+                    
+                    if ($ordem == "menorValor") {
+                        $sql_org = "SELECT * FROM produto GROUP BY Preco HAVING Preco < 500";
+                        $sql_query = $mysqli->query($sql_org) or die("Erro ao consultar catálogo de produtos! " . $mysqli->error);
+                        } else {
+                        $sql_org = "SELECT * FROM produto";
+                        $sql_query = $mysqli->query($sql_org) or die("Erro ao consultar catálogo de produtos! " . $mysqli->error);
                     }
                     ?>
-                                </select>
+                    </select>
                     <?php
                     if ($qnt < 1) {
                     ?>
@@ -178,7 +182,7 @@ $qnt = $sql_query->num_rows;
                         </div>
                         <?php
                     } else {
-                        while ($dados = $sql_ordem->fetch_assoc()) {
+                        while ($dados = $sql_query->fetch_assoc()) {
                         ?>
                             <div class="card mb-3" style="max-width: 700px;">
                                 <div class="row no-gutters">
@@ -244,7 +248,7 @@ $qnt = $sql_query->num_rows;
         $pesquisa = $mysqli->real_escape_string($_GET['busca']);
         $sql_pesquisa = "SELECT  * FROM PRODUTO WHERE Nome like '%$pesquisa%' or Descricao like '%$pesquisa%' or Tipo like '%$pesquisa%' or Marca like '%$pesquisa%'";
         //$sql_pesquisa = "SELECT ID,Imagem, Nome, Descricao, Marca, Tipo, Preco FROM PRODUTO Group by Tipo Having Nome like '%$pesquisa%' or Descricao like '%$pesquisa%' or Tipo like '%$pesquisa%' or Marca like '%$pesquisa%'";
-        $sql_query_pesquisa = $mysqli-> query($sql_pesquisa) or die("ERRO AO CONSULTAR" . $mysqli->error);
+        $sql_query_pesquisa = $mysqli->query($sql_pesquisa) or die("ERRO AO CONSULTAR" . $mysqli->error);
         if ($sql_query_pesquisa->num_rows == 0) {
         ?>
 
