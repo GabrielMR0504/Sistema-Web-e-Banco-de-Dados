@@ -18,6 +18,8 @@
 			$sql_code = "SELECT * FROM cliente WHERE Email = '$email' AND Senha = '$senha'";
 			$sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL: " . $mysqli->error);
 
+			
+
 			$qntd = $sql_query->num_rows;
 			if($qntd == 1) {
 				$usuario = $sql_query->fetch_assoc();
@@ -25,10 +27,17 @@
 				if(!isset($_SESSION)) {
 					session_start();
 				}
+				$sql_cria_venda = "INSERT INTO `venda` (`DataVenda`, `PrecoTotal`, `Endereco`, `CPFCliente`, `IDFormaPagamento`) VALUES ('a',' 0', 'ab', '".$usuario['CPF']."', '10') ";
+				$sql_gera_venda = $mysqli->query($sql_cria_venda) or die("ESSE ERRO: " . $mysqli->error);
+				
+				$sqlSalvaID = $mysqli->query("SELECT * FROM venda WHERE CPFCliente = ".$usuario['CPF']." AND ID = (SELECT MAX(ID) FROM venda WHERE CPFCliente = ".$usuario['CPF'].")") or die("Falha na execução do código SQL: " . $mysqli->error);
+				$ID = $sqlSalvaID->fetch_assoc();
+				
 				//variavel session dura por um periodo de mais ou menos 1 semana
-				$_SESSION['cpf'] = $usuario['CPF']; 
+				$_SESSION['idvenda'] = $ID['ID']; 
 				$_SESSION['nome'] = $usuario['Nome'];
-
+				$_SESSION['cpf'] = $usuario['CPF'];
+				
 				header("Location: loja.php");
 
 			} else {
