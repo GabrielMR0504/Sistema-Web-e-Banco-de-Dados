@@ -84,7 +84,7 @@ if (isset($_POST['email']) || isset($_POST['senha']) || isset($_POST['cpf']) || 
                         </div>
                         <div class="input-group mb-3">
                             <div class="input-group-append">
-                                <span class="input-group-text"><i class="fa fa-house"></i></span>
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
                             <input type="text" name="endereco" class="form-control input_user" value="" placeholder="Endereço">
                         </div>
@@ -98,7 +98,7 @@ if (isset($_POST['email']) || isset($_POST['senha']) || isset($_POST['cpf']) || 
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="fas fa-key"></i></span>
                             </div>
-                            <input type="password" name="senha" class="form-control input_pass" value="" placeholder="password">
+                            <input type="password" name="senha" class="form-control input_pass" value="" placeholder="Senha">
                         </div>
                         <div class="d-flex justify-content-center mt-3 login_container">
                             <button type="submit" name="registrar" class="btn login_btn">Registrar</button>
